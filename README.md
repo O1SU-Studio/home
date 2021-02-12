@@ -1,1 +1,1 @@
-https://o1su-studio.github.io/site/
+https://o1su-studio.github.io/home/
