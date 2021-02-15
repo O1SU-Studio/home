@@ -14,10 +14,23 @@
     />
 
     <style>
-      html,
+      #pushstart {
+        background: url(/docs/res/img/png/stars.png);
+        background-repeat: repeat;
+        background-size: auto;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        top: 0px;
+        z-index: 1;
+      }
+      /* html,
       body {
         background-color: black;
+        
       }
+      */
       .box {
         position: absolute;
         left: 1%;
@@ -36,11 +49,42 @@
         }
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
-    <div class="d-flex justify-content-center">
-      <img id="o1su" class="box" style="height: 100%" src="res/img/gif/rise.gif" alt="" />
+    <div id="app">
+      <div
+        id="pushstart"
+        class="d-flex justify-content-center"
+        v-if="!isHidden"
+      >
+        <img
+          id="o1su"
+          class="box"
+          style="height: 100%"
+          @click="isHidden = !isHidden"
+          src="res/img/gif/menu_highres.gif"
+          alt=""
+        />
+      </div>
+      <div>
+        <h1 class="text-center">Rick Rolled</h1>
+        <video
+          v-if="isHidden"
+          autoplay
+          src="res/vid/mp4/rickroll.mp4"
+          width="100%"
+        ></video>
+      </div>
     </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          isHidden: false,
+        },
+      });
+    </script>
 
     <!-- jQuery -->
     <script
