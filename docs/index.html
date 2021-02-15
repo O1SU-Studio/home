@@ -61,7 +61,7 @@
         />
       </div>
       <div>
-        <h1 class="text-center">Rick Rolled</h1>
+        <h1 v-if="isHidden" class="text-center">Rick Rolled</h1>
         <video
           v-if="isHidden"
           autoplay
